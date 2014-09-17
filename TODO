@@ -1,0 +1,14 @@
+TODO
+
+Phase 1
+
+- Integrate JSON format from OpenWeatherMap.org
+- Translate to danish
+- Enable geolocation
+- Get city from geolocation
+- Use city from geolocation as main point
+- Localstorage to store selected cities
+
+Phase 2
+- Sign in with Google/Twitter
+- Save preferences to account

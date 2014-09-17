@@ -1,0 +1,40 @@
+{
+	"coord": {
+		"lon":-81.23,"lat":42.98
+	},
+	"sys": {
+		"type":1,
+		"id":3678,
+		"message":0.0509,
+		"country":"CA",
+		"sunrise":1410952048,
+		"sunset":1410996653
+	},
+	"weather":[
+		{
+			"id":803,
+			"main":"Clouds",
+			"description":"broken clouds",
+			"icon":"04d"
+		}
+	],
+		"base":"cmc stations",
+		"main": {
+		"temp":290.2,
+		"pressure":1015,
+		"humidity":55,
+		"temp_min":290.15,
+		"temp_max":290.37
+	},
+	"wind": {
+		"speed":3.1,
+		"deg":280
+	},
+	"clouds": {
+		"all":75
+	},
+	"dt":1410996155,
+	"id":6058560,
+	"name":"London",
+	"cod":200
+}
