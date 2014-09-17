@@ -1,0 +1,11 @@
+{
+  "name": "Cabana Boilerplate",
+  "version": "1.0.0",
+  "dependencies": {
+    "foundation": "5.4.2",   
+    "jquery": "~1.11"
+  },
+  "resolutions": {
+    "jquery": "~1.11"
+  }
+}
