@@ -22,6 +22,8 @@
 //= include ../bower_components/foundation/js/foundation/foundation.tooltip.js
 //= include ../bower_components/foundation/js/foundation/foundation.topbar.js
 
+
+//= include vejrsgo.js
 //= include main.js
 //= include header.js
 //= include footer.js

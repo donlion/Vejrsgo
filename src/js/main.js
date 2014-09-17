@@ -2,6 +2,10 @@ $(function(){
 	
 	$(document).foundation();
 	
-	console.log('This came from main.js. Foundation version: ' + Foundation.version);
-	
+});
+
+$(document).ready(function() {
+
+	Vejrsgo.setup();
+
 });
