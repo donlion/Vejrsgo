@@ -11,6 +11,14 @@ html, body {
 	display : inline-block;
 	background-color : $yellow;
 	border-radius : 50%;
+	position : relative;
+	z-index : 10;
+	border : 0px solid #ffe87e;
+	transition : all .26s $transition;
+
+	&:active {
+		box-shadow : 0px 0px 20px $yellow;
+	}
 
 	&--big {
 		width : 150px;
@@ -20,8 +28,39 @@ html, body {
 		//box-shadow : 0px 2px 1px rgba(0,0,0,0.2);
 	}
 
+
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family : $headline-font-family;
+}
+
+.ripple {
+	display : block;
+	position : absolute;
+	background-color : rgba(0,0,0,0.033);
+	border-radius : 50%;
+	-webkit-transform : scale(0);
+	-moz-transform : scale(0);
+	-ms-transform : scale(0);
+	-o-transform : scale(0);
+	transform : scale(0);
+	-webkit-transition : all .3s $googletransition;
+	-moz-transition : all .3s $googletransition;
+	transition : all .3s $googletransition;
+	opacity : 0;
+	pointer-events : none;
+
+	&.animate {
+		//opacity : 1;
+		-webkit-animation : ripple .65s $googletransition;
+		-webkit-animation-fill-mode : forwards;
+		-moz-animation : ripple .65s $googletransition;
+		-moz-animation-fill-mode : forwards;
+		-o-animation : ripple .65s $googletransition;
+		-o-animation-fill-mode : forwards;
+		animation : ripple .65s $googletransition;
+		animation-fill-mode : forwards;
+	}
+
 }

@@ -3,7 +3,7 @@ header {
 	color : #dedede;
 	//border-bottom : 4px solid $dark-blue;
 	box-shadow : 0px 6px 18px rgba(0,0,0,0.2);
-	z-index : 200;
+	z-index : 3000;
 	position : relative;
 
 	h1 {
@@ -11,7 +11,7 @@ header {
 		font-family : $headline-font-family;
 		font-weight : bold;
 		margin : 0;
-		line-height : 110px;
+		line-height : 80px;
 		display : inline-block;
 		position : relative;
 		left : 15px;
@@ -25,8 +25,9 @@ header {
 
 	.sun {
 		position : relative;
-		top : 20px;
-		box-shadow : 0px 4px 8px rgba(0,0,0,0.2);
+		top : 7px;
+		height : 40px;
+		width : 40px;
 
 		@media (max-width: 767px) {
 			display : none;
