@@ -1,19 +1,19 @@
 <div class="row">
 	<div class="large-8 columns">
-		<div class="card">
+		<div class="card" data-city="Roskilde">
 			<div class="card__left">
 				<h2>
 					Roskilde
 				</h2>
-				<div class="card__temperature card__temperature--big">
-					19
+				<div class="card__temperature card__temperature--big" data-inject="current_condition.temp_C">
+					XX
 				</div>
 			</div>
 
 			<div class="card__right">
 				<div class="sun weather sun--big">
 				</div>
-				<div class="card__weather">
+				<div class="card__weather" data-inject="current_condition.weatherDesc.value">
 					Sol
 				</div>
 			</div>
@@ -27,17 +27,17 @@
 	</div>
 
 	<div class="large-4 columns">
-		<div class="card">
+		<div class="card" data-city="New York">
 			<div class="card__full">
 				<h2>
 					New York
 				</h2>
 				<div class="sun weather">
 				</div>
-				<div class="card__weather">
+				<div class="card__weather" data-inject="current_condition.weatherDesc.value">
 					Skyet
 				</div>
-				<div class="card__temperature">
+				<div class="card__temperature" data-inject="current_condition.temp_C">
 					16
 				</div>
 			</div>
