@@ -95,16 +95,13 @@ var Vejrsgo = new function() {
 	};
 
 	this.injectWeather = function(card, city, data, callback) {
-		console.log(data["current_condition"][0]["temp_C"]);
 		if (!data) {
 			card.css("opacity", "0.4");
 			console.log("Something went wrong!");
 			console.log(data);
 		} else {
-			console.log($(card).find("[data-inject]"));
 
 			$(card).find("[data-inject]").each(function() {
-				console.log("[data-inject]");
 
 				var _this = $(this),
 						inject = _this.attr("data-inject"),
@@ -120,7 +117,7 @@ var Vejrsgo = new function() {
 
 				if (_this.is("input")) {
 					_this.val(inject);
-				} else if (_this.is("div")) {
+				} else if (_this.is("div") || _this.is("span")) {
 					_this.text(inject);
 				}
 
