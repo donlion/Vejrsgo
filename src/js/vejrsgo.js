@@ -5,6 +5,7 @@ var Vejrsgo = new function() {
 	this.setup = function() {
 		this.weather();
 		this.setupBindings();
+		this.attachFooter();
 	};
 
 	this.setupBindings = function() {
@@ -25,7 +26,7 @@ var Vejrsgo = new function() {
 			$("body").append(newCard);
 
 			newCard.click(function() {
-				$(this).css("top", "-"+$(this).outerHeight()+"px").css("opacity", "0");
+				$(this).css("transition-duration", "1.2s").css("top", "-"+$(this).outerHeight()+"px").css("opacity", "0");
 				var card = $(this);
 				setTimeout(function() {
 					card.remove();
@@ -125,7 +126,9 @@ var Vejrsgo = new function() {
 
 			});
 
-			callback();
+			setTimeout(function() {
+				callback();
+			}, 1500);
 
 		}
 	};
@@ -189,6 +192,21 @@ var Vejrsgo = new function() {
               ripple.remove();
           }, 1000);
       });
+  };
+
+  this.attachFooter = function() {
+
+  	var footer = $("footer.footer");
+
+  	var footerBottom = footer.offset().top + footer.height();
+  	var bodyHeight = $("body").height();
+
+  	if (footerBottom <= bodyHeight) {
+  		footer.addClass("attached");
+  	}
+
+
+
   };
 
 };
