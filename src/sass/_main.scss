@@ -5,6 +5,14 @@ html, body {
 	font-size : 14px;
 }
 
+a, input, textarea, button {
+	transition : all .26s $transition;
+
+	&:focus {
+		outline : none;
+	}
+}
+
 .sun {
 	width : 75px;
 	height : 75px;
