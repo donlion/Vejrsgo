@@ -1,4 +1,4 @@
-header {
+.header {
 	background-color : $light-blue;
 	color : #dedede;
 	//border-bottom : 4px solid $dark-blue;
@@ -31,6 +31,33 @@ header {
 
 		@media (max-width: 767px) {
 			display : none;
+		}
+	}
+
+	&__menu__list {
+		margin : 0;
+		display : inline-block;
+		list-style-type : none;
+		float : right;
+
+		&__item {
+			float : left;
+			width : auto;
+			display : inline-block;
+			line-height : 80px;
+
+			a {
+				color : #eee;
+				font-size : 1em;
+				line-height : 80px;
+				display : inline-block;
+				padding : 0 30px;
+
+				&:hover {
+					background-color : rgba(0,0,0,0.1);
+					color : #fff;
+				}
+			}
 		}
 	}
 }
