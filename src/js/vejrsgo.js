@@ -3,7 +3,7 @@ var Vejrsgo = new function() {
 	this.WeatherAPIKey = "e494905c60db134c0b21009c27b069d67d81e8a0";
 	
 	this.setup = function() {
-		//this.weather();
+		this.weather();
 		this.setupBindings();
 		this.attachFooter();
 		this.attachOverlay();
