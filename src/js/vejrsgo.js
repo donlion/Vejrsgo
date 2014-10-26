@@ -1,26 +1,19 @@
 var Vejrsgo = new function() {
 
-	this.WeatherAPIKey = "e494905c60db134c0b21009c27b069d67d81e8a0";
-	
+	this.WeatherAPIKey = "e494905c60db134c0b21009c27b069d67d81e8a0";	
+
 	this.setup = function() {
-		this.weather();
+		//this.weather();
+		Vejrsgo.load.hide();
 		this.setupBindings();
 		this.attachFooter();
 		this.attachOverlay();
-		this.system();
 	};
 
 	this.setupBindings = function() {
 		this.Ripple();
 
-		$(".card").click(function() {
-			$(".card.highlight").each(function() {
-					$(this).css("top", "-"+$(this).outerHeight()+"px").css("opacity", "0");
-					var card = $(this);
-					setTimeout(function() {
-						card.remove();
-					}, 2000);
-			});
+		$("body").on("click", ".card:not(.highlight)", function() {
 			var newCard = $(this).clone();
 			newCard.addClass("highlight");
 			newCard.find(".ripple").remove();
@@ -28,12 +21,13 @@ var Vejrsgo = new function() {
 			$("body").append(newCard);
 
 			newCard.click(function() {
-				$(this).css("transition-duration", "1.2s").css("top", "-"+$(this).outerHeight()+"px").css("opacity", "0");
+				$(this).css("top", "-100px").css("opacity", "0");
+				//.css("top", "-"+$(this).outerHeight()+"px").css("transition-duration", "1.2s")
 				var card = $(this);
 				setTimeout(function() {
 					card.remove();
 				}, 2000);
-			});
+			});	
 		});
 
 		$("body").on("click", "a", function(e) {
@@ -299,4 +293,17 @@ var Vejrsgo = new function() {
 
   };
 
+  this.title = function(title) {
+
+  	var domTitle = $("head title");
+
+  	if (title && title != "" && domTitle.html() != title) {
+  		console.log("Title changed to ", title);
+  		domTitle.html(title);
+  	}
+
+  };
+
 };
+
+Vejrsgo.load.show();
