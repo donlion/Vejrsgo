@@ -18,6 +18,10 @@ VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 
 	Vejrsgo.title("Vejrsgo'");
 
+	if (!$scope.cards) {
+		$scope.cards = {};
+	}
+
 	console.log("cardCtrl-controller initated");
 
 	$scope.initiated = "cardCtrl";
@@ -26,10 +30,10 @@ VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 
 	Vejrsgo.load.show();
 
-	$q.all(getCardData()).then(function(data) {
-		$scope.cards = data;
+	getCardData().then(function(data) {
 		console.log("cardData successfully loaded!");
-		console.log($scope.cards, "color:#333;")
+		console.log(data, "color:#333;")
+		$scope.cards = data;
 		Vejrsgo.load.hide();
 	}, function(error) {
 		console.log(error);
@@ -49,7 +53,7 @@ VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 	return function() {
 		var deferred = $q.defer();
 
-		$http.get("http://0.0.0.0:8004").success(function(data, status) {
+		$http.get("http://0.0.0.0:8004").success(function(data) {
 			deferred.resolve(data);
 		}).error(function() {
 			deferred.reject("Something went wrong on asynchronous call!");

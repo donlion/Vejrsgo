@@ -90,25 +90,25 @@ var server = http.createServer(function(req, res) {
 				"</form>"
 			);*/
 
-			var cards = {"cards": [
-				"1": {
-					"city": "Roskilde",
-					"size": "large-8"
-				},
-				"2": {
-					"city": "Paris",
-					"size": "large-4"
-				},
-				"3": {
-					"city": "København",
-					"size": "large-12"
-				}
-			]};
+			var cards = [
+					{
+						"city": "Roskilde",
+						"size": "large-8"
+					},
+					{
+						"city": "Paris",
+						"size": "large-4"
+					},
+					{
+						"city": "København",
+						"size": "large-12"
+					}
+				];
 
 			response.content.push(
 				JSON.stringify(cards)
 			);
-			response.contentType = "application/JSON";
+			response.contentType = "plain/text";
 			response.code = 200;
 
 		}

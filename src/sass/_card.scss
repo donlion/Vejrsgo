@@ -34,7 +34,6 @@
 
 	&:active {
 		box-shadow : 0px 6px 18px rgba(0,0,0,0.3);
-		background : #f9f9f9;
 	}
 
 	@media (max-width: 767px) {
@@ -42,7 +41,7 @@
 	}
 
 
-	&.ng-enter, &.ng-enter.ng-enter-active, &.ng-leave, &.ng-leave.ng-leave-active {
+	&.visible {
 		transition : all .5s $transition;
 		-webkit-transform : scale(1,1)!important;
 		opacity : 1!important;
