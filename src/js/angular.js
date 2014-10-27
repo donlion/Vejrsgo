@@ -29,6 +29,7 @@ VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 	$q.all(getCardData()).then(function(data) {
 		$scope.cards = data;
 		console.log("cardData successfully loaded!");
+		console.log($scope.cards, "color:#333;")
 		Vejrsgo.load.hide();
 	}, function(error) {
 		console.log(error);
