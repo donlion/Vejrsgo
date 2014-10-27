@@ -43,6 +43,9 @@ gulp.task('styles', function () {
         _merge.add(gulp.src('sass/app.scss')
             .pipe(sass({ outputStyle: 'nested', errLogToConsole: true, includePaths: ['bower_components/foundation/scss'] }))
 		    .pipe(gulp.dest(dir)));
+        _merge.add(gulp.src('sass/angular-material.scss')
+            .pipe(sass({ outputStyle: 'nested', errLogToConsole: true, includePaths: ['bower_components/foundation/scss'] }))
+            .pipe(gulp.dest(dir)));
     });
     return _merge;
 });

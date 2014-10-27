@@ -1,6 +1,9 @@
+//= include ../bower_components/hammerjs/hammer.js
 //= include ../bower_components/angular/angular.js
 //= include ../bower_components/angular-route/angular-route.js
 //= include ../bower_components/angular-animate/angular-animate.js
+//= include ../bower_components/angular-material/angular-material.js
+//= include ../bower_components/angular-aria/angular-aria.js
 
 //= include ../bower_components/foundation/js/vendor/modernizr.js
 //= include ../bower_components/jquery/dist/jquery.js

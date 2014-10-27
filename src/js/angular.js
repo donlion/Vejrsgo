@@ -1,6 +1,6 @@
-var VejrsgoApp = angular.module("VejrsgoApp", ['ngRoute']);
+var VejrsgoApp = angular.module("VejrsgoApp", ['ngRoute', 'ngMaterial']);
 
-VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
+VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider
 	.when("/", {
@@ -32,13 +32,17 @@ VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 
 	getCardData().then(function(data) {
 		console.log("cardData successfully loaded!");
-		console.log(data, "color:#333;")
+		console.log(data)
 		$scope.cards = data;
+		$rootScope.apply();
 		Vejrsgo.load.hide();
 	}, function(error) {
 		console.log(error);
 		Vejrsgo.load.hide();
 	});
+
+
+
 
 })
 
@@ -53,7 +57,7 @@ VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 	return function() {
 		var deferred = $q.defer();
 
-		$http.get("http://0.0.0.0:8004").success(function(data) {
+		$http.get("http://192.168.0.10:8004").success(function(data) {
 			deferred.resolve(data);
 		}).error(function() {
 			deferred.reject("Something went wrong on asynchronous call!");
