@@ -42,7 +42,7 @@
 	}
 
 
-	&.visible {
+	&.ng-enter, &.ng-enter.ng-enter-active, &.ng-leave, &.ng-leave.ng-leave-active {
 		transition : all .5s $transition;
 		-webkit-transform : scale(1,1);
 		opacity : 1;

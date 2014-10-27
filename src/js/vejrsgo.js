@@ -52,7 +52,7 @@ var Vejrsgo = new function() {
 		var cardDelay = 200;
 		var cardDelayFactor = 1.5;
 		$(".card").each(function() {
-			//$(this).css("-webkit-animation-delay", cardDelay.toString()+"s");
+			$(this).css("-webkit-animation-delay", cardDelay.toString()+"s");
 			
 			var card = $(this);
 

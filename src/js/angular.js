@@ -1,6 +1,6 @@
 var VejrsgoApp = angular.module("VejrsgoApp", ['ngRoute']);
 
-VejrsgoApp.config(['$routeProvider', function($routeProvider) {
+VejrsgoApp.config(['$routeProvider',  function($routeProvider) {
 
 	$routeProvider
 	.when("/", {
@@ -10,7 +10,7 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 	.when("/settings", {
 		templateUrl: "src/html/include/settings.html",
 		controller: "settingsCtrl"
-	})
+	});
 
 }])
 
@@ -24,8 +24,15 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 	console.log(Vejrsgo.storage.get("user"));
 
-	$q.when(getCardData()).then(function(data) {
-		console.log("getCards resolved!", data);
+	Vejrsgo.load.show();
+
+	$q.all(getCardData()).then(function(data) {
+		$scope.cards = data;
+		console.log("cardData successfully loaded!");
+		Vejrsgo.load.hide();
+	}, function(error) {
+		console.log(error);
+		Vejrsgo.load.hide();
 	});
 
 })
@@ -44,7 +51,7 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 		$http.get("http://0.0.0.0:8004").success(function(data, status) {
 			deferred.resolve(data);
 		}).error(function() {
-			deferred.reject("Something went wrong!");
+			deferred.reject("Something went wrong on asynchronous call!");
 		});
 
 		return deferred.promise;

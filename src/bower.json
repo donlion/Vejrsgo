@@ -2,13 +2,14 @@
   "name": "Cabana Boilerplate",
   "version": "1.0.0",
   "dependencies": {
-    "foundation": "5.4.2",   
+    "foundation": "5.4.2",
     "jquery": "~1.11",
     "angular": "~1.3",
     "angular-route": "latest",
-    "angular-animate": "latest"
+    "angular-animate": "~1.3"
   },
   "resolutions": {
-    "jquery": "~1.11"
+    "jquery": "~1.11",
+    "angular": "1.3.0"
   }
 }
