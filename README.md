@@ -34,3 +34,8 @@ That's it!
 #### Notes
 Directories `src/bower_components`, `src/node_modules` and `resources/` shall and will **NOT** be included in Visual Studio project. Which means that every developer will have to get all the dependencies from their sources and build the frontend project himself.
 
+Vejrsgo
+==================
+Vejrsgo is a danish weather-app project.
+
+Run `node server.js` in the root folder to make the offline/testing code work
