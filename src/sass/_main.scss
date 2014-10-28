@@ -5,7 +5,7 @@ html, body {
 	font-size : 14px;
 }
 
-a, input, textarea, button {
+a, input, textarea, button, md-button {
 	transition : all .26s $transition;
 
 	&:focus {

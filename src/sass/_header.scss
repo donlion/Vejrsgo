@@ -6,6 +6,19 @@
 	z-index : 3000;
 	position : relative;
 
+	md-button {
+		background-color : $light-blue;
+		min-width : 100px;
+
+		&:hover {
+			background-color : lighten($light-blue, 5%)!important;
+		}
+		
+		button {
+			color : #fff;
+		}
+	}
+
 	h1 {
 		color : #fff;
 		font-family : $headline-font-family;
@@ -39,12 +52,13 @@
 		display : inline-block;
 		list-style-type : none;
 		float : right;
+		padding-top : 20px;
 
 		&__item {
 			float : left;
 			width : auto;
 			display : inline-block;
-			line-height : 80px;
+			//line-height : 80px;
 
 			a {
 				color : #eee;
