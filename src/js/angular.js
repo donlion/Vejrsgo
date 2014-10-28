@@ -34,7 +34,6 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 		console.log("cardData successfully loaded!");
 		console.log(data)
 		$scope.cards = data;
-		$rootScope.apply();
 		Vejrsgo.load.hide();
 	}, function(error) {
 		console.log(error);

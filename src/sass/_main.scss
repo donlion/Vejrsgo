@@ -1,5 +1,5 @@
 html, body {
-	background-color : $blue;
+	background-color : $blue!important;
 	font-family : $font-family;
 	color : #333;
 	font-size : 14px;
@@ -40,7 +40,8 @@ a, input, textarea, button, md-button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family : $headline-font-family;
+	//font-family : $headline-font-family;
+	font-weight : bold;
 }
 
 .ripple {
