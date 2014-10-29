@@ -10,6 +10,10 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 	.when("/settings", {
 		templateUrl: "src/html/include/settings.html",
 		controller: "settingsCtrl"
+	})
+	.when("/user", {
+		templateUrl: "src/html/include/user.html",
+		controller: "userCtrl"
 	});
 
 }])
@@ -45,13 +49,6 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 })
 
-.controller("settingsCtrl", function($scope, $http) {
-
-	Vejrsgo.title("Vejrsgo' - Settings");
-
-})
-
-
 .factory("getCardData", function($q, $http) {
 	return function() {
 		var deferred = $q.defer();
@@ -65,4 +62,17 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 		return deferred.promise;
 
 	};
+})
+
+.controller("settingsCtrl", function($scope, $http) {
+
+	Vejrsgo.title("Vejrsgo' - Settings");
+
+})
+
+
+.controller("userCtrl", function($scope) {
+
+	$scope.loggedin = false;
+
 });

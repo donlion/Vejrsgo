@@ -205,14 +205,14 @@ var Vejrsgo = new function() {
 
   this.attachFooter = function() {
 
-  	var footer = $("footer.footer");
+  	/*var footer = $("footer.footer");
 
   	var footerBottom = footer.offset().top + footer.height();
   	var bodyHeight = $("body").height();
 
   	if (footerBottom <= bodyHeight) {
   		footer.addClass("attached");
-  	}
+  	}*/
 
 
 

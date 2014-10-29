@@ -1,0 +1,25 @@
+<div class="row">
+	<div ng-if="loggedin == true">
+		<div class="large-12 columns">
+			<md-card>
+				<h1>
+					User {{loggedin}}
+				</h1>
+			</md>
+		</div>
+	</div>
+
+	<div ng-if="loggedin == false">
+		<div class="large-12 columns">
+			<md-content>
+				<md-card>
+					<h2>
+						Sign in
+					</h2>
+					<md-divider></md-divider>
+					sign in formular
+				</md-card>
+			</md-content>
+		</div>
+	</div>
+</div>
