@@ -6,12 +6,12 @@ var Vejrsgo = new function() {
 		//this.weather();
 		Vejrsgo.load.hide();
 		this.setupBindings();
-		this.attachFooter();
+		//this.attachFooter();
 		this.attachOverlay();
 	};
 
 	this.setupBindings = function() {
-		this.Ripple();
+		//this.Ripple();
 
 		$("body").on("click", ".card:not(.highlight)", function() {
 			var newCard = $(this).clone();

@@ -5,7 +5,7 @@
 				<h1>
 					User {{loggedin}}
 				</h1>
-			</md>
+			</md-card>
 		</div>
 	</div>
 
@@ -17,7 +17,40 @@
 						Sign in
 					</h2>
 					<md-divider></md-divider>
-					sign in formular
+					<br />
+					<div class="loginform">
+
+<!-- 						<div class="row">
+							<div class="large-4 columns">
+								<md-text-float ng-model="username" label="Username"></md-text-float>
+							</div>
+
+							<div class="large-4 columns">
+								<md-text-float ng-model="password" label="Password"></md-text-float>
+							</div>
+
+							<div class="large-4 columns">
+								<md-button class="md-button-colored md-button-raised" ng-click="form.post()">
+									Sign in
+								</md-button>
+							</div>
+						</div> -->
+
+						<md-toolbar class="md-medium-tall" style="padding-top:15px;">
+							<div class="md-toolbar-tools">
+								<md-text-float label="Username" ng-model="username" flex="33">
+								</md-text-float>
+								<md-text-float label="Password" ng-model="password" flex="33">
+								</md-text-float>
+								<md-button ng-click="form.post()" class="md-theme-green" flex="33">
+									Sign in
+								</md-button>
+							</div>
+						</md-toolbar>
+
+					</div>
+
+
 				</md-card>
 			</md-content>
 		</div>

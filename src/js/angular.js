@@ -51,9 +51,10 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 .factory("getCardData", function($q, $http) {
 	return function() {
-		var deferred = $q.defer();
+		var deferred = $q.defer(),
+				cardUrl = "http://localhost:8004";
 
-		$http.get("http://192.168.0.10:8004").success(function(data) {
+		$http.get(cardUrl).success(function(data) {
 			deferred.resolve(data);
 		}).error(function() {
 			deferred.reject("Something went wrong on asynchronous call!");
@@ -71,8 +72,14 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 })
 
 
-.controller("userCtrl", function($scope) {
+.controller("userCtrl", function($scope, $http) {
 
 	$scope.loggedin = false;
+
+	$scope.form = {};
+
+	$scope.form.post = function() {
+		console.log($scope.username, $scope.password);
+	};
 
 });
