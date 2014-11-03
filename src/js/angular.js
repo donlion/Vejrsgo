@@ -4,7 +4,7 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider
 	.when("/", {
-		templateUrl: "src/html/include/cards.html",
+		templateUrl: "src/html/include/index.html",
 		controller: "cardCtrl"
 	})
 	.when("/settings", {
