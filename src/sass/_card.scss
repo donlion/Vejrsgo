@@ -1,7 +1,16 @@
 .card {
 
 	&--container {
-		-webkit-perspective : 1000px;
+		-webkit-transform : scale(1);
+		transition : all .4s $transition;
+		
+		&.ng-enter.ng-enter-active, &.ng-enter {
+			-webkit-transform : scale(0);
+		}
+
+		&.ng-leave.ng-leave-active, &.ng-leave {
+			-webkit-transform : scale(0);
+		}
 	}
 
 	width  : 100%;

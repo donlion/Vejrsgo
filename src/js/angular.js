@@ -1,4 +1,4 @@
-var VejrsgoApp = angular.module("VejrsgoApp", ['ngRoute', 'ngMaterial']);
+var VejrsgoApp = angular.module("VejrsgoApp", ['ngRoute', 'ngMaterial', 'ngAnimate']);
 
 VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
@@ -18,7 +18,7 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 }])
 
-.controller("cardCtrl", function($scope, $http, $q, getCardData) {
+.controller("cardCtrl", function($scope, $http, $q, getCardData, getSuggestedCards) {
 
 	Vejrsgo.title("Vejrsgo'");
 
@@ -34,10 +34,11 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 
 	Vejrsgo.load.show();
 
-	getCardData().then(function(data) {
+	$q.all([getCardData(), getSuggestedCards()]).then(function(data) {
 		console.log("cardData successfully loaded!");
 		console.log(data)
-		$scope.cards = data;
+		$scope.cards = data[0];
+		$scope.cats = data[1];
 		Vejrsgo.load.hide();
 	}, function(error) {
 		console.log(error);
@@ -54,6 +55,7 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 		var deferred = $q.defer(),
 				cardUrl = "http://localhost:8004";
 
+
 		$http.get(cardUrl).success(function(data) {
 			deferred.resolve(data);
 		}).error(function() {
@@ -63,6 +65,22 @@ VejrsgoApp.config(['$routeProvider', function($routeProvider) {
 		return deferred.promise;
 
 	};
+})
+
+.factory("getSuggestedCards", function($q, $http) {
+	return function() {
+
+		var deferred = $q.defer(),
+				cardUrl = "http://localhost:8005";
+
+		$http.get(cardUrl).success(function(data) {
+			deferred.resolve(data);
+		}).error(function() {
+			deferred.reject("Someting went wrong on asynchronous call!");
+		});
+
+		return deferred.promise;
+	}
 })
 
 .controller("settingsCtrl", function($scope, $http) {

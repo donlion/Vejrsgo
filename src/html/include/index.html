@@ -8,14 +8,40 @@
 	</div>
 </div> -->
 
-<div class="row">
-	<div class="{{card.size}} columns" ng-repeat="card in cards">
-		<md-card>
-			<h2>
-				{{card.city}}
-			</h2>
+
+<div class="row cats">
+		<md-toolbar>
+			<div class="large-12 columns">
+				<h2 class="headline headline--inline">
+					What to do
+				</h2>
+			</div>
+		</md-toolbar>
+	<br />
+
+	<md-content layout="horizontal">
+		<md-card flex="{{cat.size}}" class="cats__cat" ng-repeat="cat in cats">
+		<div class="md-card-icon {{cat.icon}}">
+		</div>
+		<h3 clas="cats__cat__headline">
+			{{cat.headline}}
+		</h3>
 		</md-card>
-	</div>
+	</md-content>
+</div>
+
+<div class="row">
+	<md-content layout="horizontal">
+		<div class="card--container" flex="{{card.size}}" ng-repeat="card in cards">
+			<div>
+				<md-card>
+					<h2>
+						{{card.city}}
+					</h2>
+				</md-card>
+			</div>
+		</div>
+	</md-content>
 </div>
 
 <div class="row">

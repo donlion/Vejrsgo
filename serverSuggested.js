@@ -5,7 +5,7 @@ var http = require("http"),
 
 var options = {
 	host: "0.0.0.0",
-	port: 8004
+	port: 8005
 };
 
 
@@ -91,19 +91,22 @@ var server = http.createServer(function(req, res) {
 			);*/
 
 			var cards = [
-					{
-						"city": "Roskilde",
-						"size": "66"
-					},
-					{
-						"city": "Paris",
-						"size": "33"
-					},
-					{
-						"city": "København",
-						"size": "100"
-					}
-				];
+										{
+											"headline" : "Movies",
+											"size" : "25",
+											"icon" : "movies"
+										},
+										{
+											"headline" : "Activities",
+											"size" : "50",
+											"icon" : "activities"
+										},
+										{
+											"headline" : "Clubs",
+											"size" : "25",
+											"icon" : "clubs"
+										}
+									];
 
 			response.content.push(
 				JSON.stringify(cards)
