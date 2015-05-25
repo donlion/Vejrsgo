@@ -1,5 +1,5 @@
 {
-  "name": "cabana-boilerplate",
+  "name": "Vejrsgo",
   "version": "1.0.0",
   "description": "NodeJS module used for building a frontend project",
   "main": "gulpfile.js",
@@ -19,5 +19,8 @@
     "gulp-sass": "^0.7.2",
     "gulp-uglify": "^0.3.1",
     "merge-stream": "^0.1.5"
+  },
+  "dependencies": {
+    "express": "^4.10.1"
   }
 }
